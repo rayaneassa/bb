@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base qr code porte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;#e6f0ff
+        }
+        h1 {
+            color: #333;
+	    border: 2px solid blue; /* Ajoute une bordure bleue autour du titre */
+            padding: 10px; /* Ajoute un peu d'espace à l'intérieur du cadre */
+            background-color: #e6f0ff; /* Optionnel : ajoute une couleur de fond légère */
+            border-radius: 5px; /* Optionnel : arrondit les coins du cadre */
+        }
+	h2 {
+	    color: #222;
+	    border: 2px solid gray; /* Ajoute une bordure bleue autour du titre */
+            padding: 10px; /* Ajoute un peu d'espace à l'intérieur du cadre */
+            background-color: #e6f0ff; /* Optionnel : ajoute une couleur de fond légère */
+            border-radius: 5px; /* Optionnel : arrondit les coins du cadre */
+	}
+	h3 {
+	    color: #333;
+	    border: 2px solid blue; /* Ajoute une bordure bleue autour du titre */
+            padding: 10px; /* Ajoute un peu d'espace à l'intérieur du cadre */
+            background-color: #e6f0ff; /* Optionnel : ajoute une couleur de fond légère */
+            border-radius: 5px; /* Optionnel : arrondit les coins du cadre */
+	}
+
+
+        p {
+            color: #555;
+	    border: 2px black; /* Ajoute une bordure bleue autour du titre */
+            padding: 10px; /* Ajoute un peu d'espace à l'intérieur du cadre */
+            background-color: white; /* Optionnel : ajoute une couleur de fond légère */
+            border-radius: 5px; /* Optionnel : arrondit les coins du cadre */
+        }
+
+	img {
+            max-width: 100%; /* S'assure que l'image ne déborde pas de l'écran */
+            height: auto; /* Maintient les proportions de l'image */
+            margin-top: 20px; /* Ajoute un espace au-dessus de l'image */
+        }
+
+	label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%; /* Prend toute la largeur */
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="nergeco.png" alt="Description de l'image" />
+    <h1>Caractéristiques</h1>
+    <h2>Nom de la porte</h2>
+    <form id="Caractéristiques" action="save.php" method="POST">
+    <input type="text" id="nom" name="nom" placeholder="nom" required>      
+    <h2>Norme européenne</h2>
+    <input type="text" id="norme" name="norme" placeholder="norme" required>
+    <h2>Largeur de passage (LPA)</h2>
+    <input type="text" id="lpa" name="lpa" placeholder="lpa" required>
+    <h2>Largeur Hors Tout</h2>
+    <input type="text" id="largeurhorstout" name="largeurhorstout" placeholder="largeurhorstout" required>
+    <h2>Hauteur Passage Libre (HPL)</h2>
+    <input type="text" id="hpl" name="hpl" placeholder="hpl" required>
+    <h2>Hauteur Hors Tout Abaque (HHTA)</h2>
+    <input type="text" id="hhta" name="hhta" placeholder="hhta" required>
+
+    <h1>Rideau</h1>
+    <h2>Montage</h2>
+    <input type="text" id="montage" name="montage" placeholder="montage" required>
+    <h2>Rideau</h2>
+    <input type="text" id="rideau" name="rideau" placeholder="rideau" required>
+    <h2>Type</h2>
+    <input type="text" id="type" name="type" placeholder="type" required>
+    <h2>Transparence</h2>
+    <input type="text" id="transparence" name="transparence" placeholder="transparence" required>
+    <h2>Type de Bavette</h2>
+    <input type="text" id="typebavette" name="typebavette" placeholder="typebavette" required>
+    <h2>Donnée Vent demandée</h2>
+    <input type="text" id="donnéevent" name="donnéevent" placeholder="donnéevent" required>
+    <h2>Vent de la porte calculé</h2>
+    <input type="text" id="ventcalculé" name="ventcalculé" placeholder="ventcalculé" required>
+    <h2>Classe au vent de la porte</h2>
+    <input type="text" id="classevent" name="classevent" placeholder="classevent" required>
+    <h2>Tube de guidage</h2>
+    <input type="text" id="tubeguidage" name="tubeguidage" placeholder="tubeguidage" required>
+    <h2>Type de Bache</h2>
+    <input type="text" id="typebache" name="typebache" placeholder="typebache" required>
+    <h2>Couleur Rideau</h2>
+    <input type="text" id="couleurrideau" name="couleurrideau" placeholder="couleurrideau" required>
+    <h2>Hauteur Mini Transparent / Sol</h2>
+    <input type="text" id="hauteurmini" name="hauteurmini" placeholder="hauteurmini" required>
+    <h2>Hauteur Maxi Transparent / Sol</h2>
+    <input type="text" id="hauteurmaxi" name="hauteurmaxi" placeholder="hauteurmaxi" required>
+
+    <h1>Structure</h1>
+    <h2>Couleur Structure</h2>
+    <input type="text" id="couleurstructure" name="couleurstructure" placeholder="couleurstructure" required>
+    <h2>Taille de la traverse</h2>
+    <input type="text" id="tailletraverse" name="tailletraverse" placeholder="tailletraverse" required>
+
+    <h1>Motorisation</h1>
+    <h2>Type de réducteur</h2>
+    <p>-----</p>
+    <h2>Taux de réduction</h2>
+    <p>-----</p>
+    <h2>Puissance Moteur</h2>
+    <p>-----</p>
+    <h2>Type de frein Moteur</h2>
+    <p>-----</p>
+    <h2>Vitesse de relevage Maxi (m/s)</h2>
+    <p>-----</p>
+    <h2>Vitesse Moyenne de relevage (m/s)</h2>
+    <p>-----</p>
+    <h2>Vitesse à la descente à 2,5m (m/s)</h2>
+    <p>-----</p>
+
+    <h1>Armoire</h1>
+    <h2>Coffret</h2>
+    <p>-----</p>
+    <h2>Composants</h2>
+    <p>-----</p>
+    <h2>Mode de fonctionnement</h2>
+    <p>-----</p>
+    <h2>Coté armoire</h2>
+    <p>-----</p>
+    <h2>Distance armoire</h2>
+    <p>-----</p>
+    <h2>Alimentation TRIPHASE+TERRE</h2>
+    <p>-----</p>
+    <h2>Fin de course</h2>
+    <p>-----</p>
+    <h2>Numéro du schéma</h2>
+    <p>-----</p>
+
+    <h1>Remontage de secours par contrepoids</h1>
+    <h2>Remontage de secours</h2>
+    <p>-----</p>
+
+    <button type="submit">Envoyer</button>
+    </form>
+
+   <script>
+        // Gestion de la soumission du formulaire  
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+
+            // Récupérer les valeurs des champs  
+            const nom = document.getElementById('nom').value;
+            const norme = document.getElementById('norme').value;
+            const lpa = document.getElementById('lpa').value;
+	    const largeurhorstout = document.getElementById('largeurhorstout').value;
+            const hpl = document.getElementById('hpl').value;
+            const hhta = document.getElementById('hhta').value;
+
+            const montage = document.getElementById('montage').value;
+            const rideau = document.getElementById('rideau').value;
+            const type = document.getElementById('type').value;
+            const transparence = document.getElementById('transparence').value;
+            const typebavette = document.getElementById('typebavette').value;
+            const donnéevent = document.getElementById('donnéevent').value;
+            const ventcalculé = document.getElementById('ventcalculé').value;
+            const classevent = document.getElementById('classevent').value;
+            const tubeguidage = document.getElementById('tubeguidage').value;
+            const typebache = document.getElementById('typebache').value;
+            const couleurrideau = document.getElementById('couleurrideau').value;
+            const hauteurmini = document.getElementById('hauteurmini').value;  
+            const hauteurmaxi = document.getElementById('hauteurmaxi').value;
+            
+	    const couleurstructure = document.getElementById('couleurstructure').value;  
+            const tailletraverse = document.getElementById('tailletraverse').value;
+
+
+            // Afficher les valeurs dans la console (vous pouvez les traiter comme vous le souhaitez)
+            console.log('Nom:', nom);
+            console.log('Email:', norme);
+            console.log('Message:', largeurpassage);
+
+            // Réinitialiser le formulaire  
+            this.reset();
+        });
+    </script>
+    </body>
+</html>
